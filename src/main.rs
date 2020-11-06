@@ -1,6 +1,3 @@
-use std::fs;
+use aoc_runner_derive::aoc_main;
 
-fn main() {
-    let contents = fs::read_to_string("../../input").expect("Something went wrong");
-    println!("result is {}", advent::day1::sum_fuel(contents.lines()));
-}
+aoc_main! { lib = advent } 
