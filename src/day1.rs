@@ -30,20 +30,25 @@ fn part2(lines: &[u32]) -> u32 {
     acc
 }
 
-#[test]
-fn part1() {
-    let result = sum_fuel(&[12]);
-    assert!(result == 2, "Should be 2 but was {}", result);
-    let result = sum_fuel(&[14]);
-    assert!(result == 2, "Should be 2 but was {}", result);
-    let result = sum_fuel(&[1969]);
-    assert!(result == 654, "Should be 654 but was {}", result);
-    let result = sum_fuel(&[100756]);
-    assert!(result == 33583, "Should be 33583 but was {}", result);
-}
+#[cfg(test)]
+pub mod tests {
+    use super::{calc_mass, sum_fuel};
 
-#[test]
-fn part2() {
-    let result = calc_mass(100756, 0);
-    assert!(result == 50346, "Should be 50346 but was {}", result);
+    #[test]
+    fn part1() {
+        let result = sum_fuel(&[12]);
+        assert!(result == 2, "Should be 2 but was {}", result);
+        let result = sum_fuel(&[14]);
+        assert!(result == 2, "Should be 2 but was {}", result);
+        let result = sum_fuel(&[1969]);
+        assert!(result == 654, "Should be 654 but was {}", result);
+        let result = sum_fuel(&[100756]);
+        assert!(result == 33583, "Should be 33583 but was {}", result);
+    }
+
+    #[test]
+    fn part2() {
+        let result = calc_mass(100756, 0);
+        assert!(result == 50346, "Should be 50346 but was {}", result);
+    }
 }
